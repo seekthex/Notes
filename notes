@@ -28,21 +28,33 @@ sudo apt-get update
 sudo apt-get install -y mongodb-org
 
 
-#starts up the mongod
+#now start-up the mongod server
 sudo systemctl start mongod
  
-#Start mongodb cli:
+#now start-up the mongodb cli:
+mongo
+use explorerdb
+db.createUser( { user: "chcuser", pwd: "chcpassword", roles: [ "readWrite" ] } )
+exit
+ 
+sudo npm install forever -g
+
 mongo
 use explorerdb
 db.createUser( { user: "iquidus", pwd: "3xp!0reR", roles: [ "readWrite" ] } )
 exit
- 
+
+#start-up ChainCoin
+ chaincoind -reindex -txindex
+
+
+
+
 git clone https://github.com/iquidus/explorer explorer
 cd explorer && npm install --production
 cp ./settings.json.template ./settings.json
 
 nano settings.json
-
 
 
  // ensure links on API page are valid
@@ -56,7 +68,8 @@ nano settings.json
  "genesis_tx": "fa6ef9872494fa9662cf0fecf8c0135a6932e76d7a8764e1155207f3205c7c88",
   "genesis_block": "0000082f5939c2154dbcba35f784530d12e9d72472fcfaf29674ea312cdf4c83",
 
-
+#start-up ChainCoin
+ chaincoind -reindex -txindex
 
 
 
@@ -72,6 +85,43 @@ crontab information:
 ## todo 
 ## add txindex=1 to chaincooin.conf 
 # Note:you must do reindex=1 to change texindex=1 
+
+
+
+
+
+
+
+#Liqudus start up procedure
+cd ~
+sudo systemctl start mongod
+mongo
+use explorerdb
+db.createUser( { user: "iquidus", pwd: "3xp!0reR", roles: [ "readWrite" ] } )
+exit
+
+# do I need to forever again here?
+
+mongo
+use explorerdb
+db.createUser( { user: "iquidus", pwd: "3xp!0reR", roles: [ "readWrite" ] } )
+exit
+
+ chaincoind -reindex -txindex
+
+cd ~
+cd explorer
+npm start
+
+#veiw the site, if you cannot see data open a new terminal window and proceed
+cd explorer
+scripts/sync.js index reindex
+scripts/sync.js index update
+
+
+
+
+
 
 
 ------------------------------------------
