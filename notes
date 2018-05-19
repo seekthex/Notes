@@ -34,7 +34,7 @@ sudo systemctl start mongod
 #now start-up the mongodb cli:
 mongo
 use explorerdb
-db.createUser( { user: "chcuser", pwd: "chcpassword", roles: [ "readWrite" ] } )
+db.createUser( { user: "iquidus", pwd: "3xp!0reR", roles: [ "readWrite" ] } )
 exit
  
 sudo npm install forever -g
@@ -107,10 +107,16 @@ use explorerdb
 db.createUser( { user: "iquidus", pwd: "3xp!0reR", roles: [ "readWrite" ] } )
 exit
 
- chaincoind -reindex -txindex
+
+cd explorer
+forever start -c "npm start" ./
+
+
+chaincoind -reindex -txindex
 
 cd ~
 cd explorer
+npm install --production
 npm start
 
 #veiw the site, if you cannot see data open a new terminal window and proceed
