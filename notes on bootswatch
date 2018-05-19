@@ -1,0 +1,9 @@
+
+https://bootstrap.build/
+
+
+
+#pre depenencies git node
+
+cd ~
+git clone https://github.com/thomaspark/bootswatch.git
