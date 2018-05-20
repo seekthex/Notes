@@ -1,0 +1,150 @@
+# Failed experiment to install lucas's cicudius, invalid token "s" when "npm start"
+# success installing the original liquidus"
+# todo try to install suprnurds ciquidus"
+
+
+
+
+#ciquidus Explorer Build
+
+# open port 3001 on firewall
+
+
+	sudo ufw allow OpenSSH 
+	sudo ufw allow 3001
+	sudo ufw allow 21994
+	sudo ufw default deny incoming
+	sudo ufw default allow outgoing
+	sudo ufw --force enable
+
+
+curl https://raw.githubusercontent.com/seekthex/Server_Setup_Scripts/master/install-1-swap.sh | bash
+
+curl https://raw.githubusercontent.com/seekthex/create_chc_testnet/master/sh/build-tchc-ub16.sh | bash
+
+
+#Install nodejs the Legacy version
+
+	sudo apt-get update
+	sudo apt install nodejs-legacy -y
+	sudo apt-get install npm -y
+	sudo apt-get install 
+
+	
+	sudo npm install forever -g	
+
+
+#Install mongodb and start
+
+	sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+	echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+ 
+	sudo apt-get update
+	sudo apt-get install -y mongodb-org
+	sudo systemctl start mongod
+	mongo
+	use explorerdb
+	db.createUser( { user: "ciquidus", pwd: "3xp!0reR", roles: [ "readWrite" ] } )
+	exit
+ 
+#start-up ChainCoin
+ chaincoind -reindex -txindex
+
+
+
+	#choose but choose wisely
+	git clone https://github.com/seekthex/ciquidus explorer
+	#or
+	git clone https://github.com/iquidus/explorer explorer
+	#or
+	git clone https://github.com/suprnurd/ciquidus explorer
+	
+	
+	
+	cd explorer && npm install --production
+	cp ./settings.json.template ./settings.json
+	
+	
+	
+	
+	
+	npm start
+	nodejs scripts/sync.js index reindex	
+	nodejs scripts/sync.js index update	
+
+
+
+
+
+
+nano settings.json
+
+
+ // ensure links on API page are valid
+  "api": {
+    "blockindex": 1000,
+    "blockhash": "00000195f8df3d7891c710d51db2cbb4c048be5b1726753a06548301fcb16ed6",
+    "txhash": "8d01792a0684c890f704475e1eb10869f963dd5349b895110d79a1749d8f42c7",
+    "address": "ZZxP1ekvh5jwmejGneneddToqTcHYHDTSD"
+  },
+
+ "genesis_tx": "fa6ef9872494fa9662cf0fecf8c0135a6932e76d7a8764e1155207f3205c7c88",
+  "genesis_block": "0000082f5939c2154dbcba35f784530d12e9d72472fcfaf29674ea312cdf4c83",
+
+#start-up ChainCoin
+ chaincoind -reindex -txindex
+
+
+
+
+To use forever to start (run in directory of explorer):
+forever start -c "npm start" ./
+ 
+crontab information:
+*/1 * * * * cd explorer && /usr/bin/nodejs scripts/sync.js index update > /dev/null 2>&1
+*/5 * * * * cd explorer && /usr/bin/nodejs scripts/peers.js > /dev/null 2>&1
+
+
+## todo 
+## add txindex=1 to chaincooin.conf 
+# Note:you must do reindex=1 to change texindex=1 
+
+
+
+
+
+
+
+#Liqudus start up procedure
+cd ~
+sudo systemctl start mongod
+mongo
+use explorerdb
+db.createUser( { user: "iquidus", pwd: "3xp!0reR", roles: [ "readWrite" ] } )
+exit
+
+# do I need to forever again here?
+
+mongo
+use explorerdb
+db.createUser( { user: "iquidus", pwd: "3xp!0reR", roles: [ "readWrite" ] } )
+exit
+
+
+cd explorer
+forever start -c "npm start" ./
+
+
+chaincoind -reindex -txindex
+
+cd ~
+cd explorer
+npm install --production
+npm start
+
+#veiw the site, if you cannot see data open a new terminal window and proceed
+cd explorer
+scripts/sync.js index reindex
+scripts/sync.js index update
+
+
