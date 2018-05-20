@@ -1,7 +1,7 @@
 
 # Failed experiment, unable to build the mongo databse
 
-#liquidus Explorer Build
+#ciquidus Explorer Build
 
 # open port 3001 on firewall
 
@@ -15,45 +15,51 @@
 
 #Install nodejs the Legacy version
 
-sudo apt-get update
-sudo apt install nodejs-legacy -y
-sudo apt-get install npm -y
-sudo apt-get install 
+	sudo apt-get update
+	sudo apt install nodejs-legacy -y
+	sudo apt-get install npm -y
+	sudo apt-get install 
 
-#Install mongodb
+	
+	sudo npm install forever -g	
 
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
-echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+
+#Install mongodb and start
+
+	sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+	echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
  
-sudo apt-get update
-sudo apt-get install -y mongodb-org
-
-
-#now start-up the mongod server
-sudo systemctl start mongod
+	sudo apt-get update
+	sudo apt-get install -y mongodb-org
+	sudo systemctl start mongod
+	mongo
+	use explorerdb
+	db.createUser( { user: "ciquidus", pwd: "3xp!0reR", roles: [ "readWrite" ] } )
+	exit
  
-#now start-up the mongodb cli:
-mongo
-use explorerdb
-db.createUser( { user: "iquidus", pwd: "3xp!0reR", roles: [ "readWrite" ] } )
-exit
- 
-sudo npm install forever -g
-
-mongo
-use explorerdb
-db.createUser( { user: "iquidus", pwd: "3xp!0reR", roles: [ "readWrite" ] } )
-exit
-
 #start-up ChainCoin
  chaincoind -reindex -txindex
 
 
 
 
-git clone https://github.com/iquidus/explorer explorer
-cd explorer && npm install --production
-cp ./settings.json.template ./settings.json
+	git clone https://github.com/seekthex/ciquidus explorer
+	cd explorer && npm install --production
+	cp ./settings.json.template ./settings.json
+	
+	nodejs scripts/sync.js index reindex
+	
+	
+	
+	npm start
+
+
+
+
+
+
+
+
 
 nano settings.json
 
