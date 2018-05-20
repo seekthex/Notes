@@ -58,8 +58,8 @@ curl https://raw.githubusercontent.com/seekthex/create_chc_testnet/master/sh/bui
 	git clone https://github.com/iquidus/explorer explorer
 	#or
 	git clone https://github.com/suprnurd/ciquidus explorer
-	
-	
+	#or 
+	git clone https://github.com/seekthex/ciquidus explorer
 	
 	cd explorer && npm install --production
 	cp ./settings.json.template ./settings.json
