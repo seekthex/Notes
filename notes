@@ -18,6 +18,12 @@
 	sudo ufw default allow outgoing
 	sudo ufw --force enable
 
+
+curl https://raw.githubusercontent.com/seekthex/Server_Setup_Scripts/master/install-1-swap.sh | bash
+
+curl https://raw.githubusercontent.com/seekthex/create_chc_testnet/master/sh/build-tchc-ub16.sh | bash
+
+
 #Install nodejs the Legacy version
 
 	sudo apt-get update
@@ -51,7 +57,8 @@
 	git clone https://github.com/seekthex/ciquidus explorer
 	#or
 	git clone https://github.com/iquidus/explorer explorer
-	
+	#or
+	git clone https://github.com/suprnurd/ciquidus explorer
 	
 	
 	
