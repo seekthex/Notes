@@ -42,19 +42,24 @@
 
 
 
-
+	#choose but choose wisely
 	git clone https://github.com/seekthex/ciquidus explorer
+	#or
+	git clone https://github.com/iquidus/explorer explorer
+	
+	
+	
+	
 	cd explorer && npm install --production
 	cp ./settings.json.template ./settings.json
 	
-	nodejs scripts/sync.js index reindex
+	
 	
 	
 	
 	npm start
-
-
-
+	nodejs scripts/sync.js index reindex	
+	nodejs scripts/sync.js index update	
 
 
 
