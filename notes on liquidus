@@ -60,6 +60,8 @@ curl https://raw.githubusercontent.com/seekthex/create_chc_testnet/master/sh/bui
 	git clone https://github.com/suprnurd/ciquidus explorer
 	#or 
 	git clone https://github.com/seekthex/ciquidus explorer
+	#or
+	git clone https://github.com/seekthex/explorer -b  explorer_0.16-dev explorer
 	
 	cd explorer && npm install --production
 	cp ./settings.json.template ./settings.json
@@ -144,7 +146,15 @@ npm start
 
 #veiw the site, if you cannot see data open a new terminal window and proceed
 cd explorer
-scripts/sync.js index reindex
-scripts/sync.js index update
+nodejs scripts/sync.js index reindex
+nodejs scripts/sync.js index update
+
+
+###### How to delete the mongo
+mongo
+use explorerdb;
+db.dropDatabase();
+exit
+
 
 
