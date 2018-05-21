@@ -44,7 +44,7 @@ curl https://raw.githubusercontent.com/seekthex/create_chc_testnet/master/sh/bui
 	sudo systemctl start mongod
 	mongo
 	use explorerdb
-	db.createUser( { user: "ciquidus", pwd: "3xp!0reR", roles: [ "readWrite" ] } )
+	db.createUser( { user: "iquidus", pwd: "3xp!0reR", roles: [ "readWrite" ] } )
 	exit
  
 #start-up ChainCoin
