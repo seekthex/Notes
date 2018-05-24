@@ -63,6 +63,10 @@ curl https://raw.githubusercontent.com/seekthex/create_chc_testnet/master/sh/bui
 	git clone https://github.com/seekthex/ciquidus explorer
 	#or
 	git clone https://github.com/seekthex/explorer -b  explorer_0.16-dev explorer
+	#or
+ 	git clone https://github.com/seekthex/ciquidus -b development explorer
+	
+	
 	
 	cd explorer && npm install --production
 	cp ./settings.json.template ./settings.json
@@ -152,6 +156,7 @@ nodejs scripts/sync.js index update
 
 
 ###### How to delete the mongo
+sudo systemctl start mongod
 mongo
 use explorerdb;
 db.dropDatabase();
