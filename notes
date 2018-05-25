@@ -291,15 +291,15 @@ cp -r -p .chaincoincore .chaincoincore3
 chaincoin-cli getaccountaddress 0
 
 
-/usr/local/bin/chc1/chaincoind -conf=/root/.chaincoincore
-/usr/local/bin/chc1/chaincoin-cli -datadir=/root/.chaincoincore getwalletinfo
-/usr/local/bin/chc1/chaincoin-cli -datadir=/root/.chaincoincore getaccountaddress 0
-/usr/local/bin/chc1/chaincoin-cli -datadir=/root/.chaincoincore stop
+chaincoind -conf=/root/.chaincoincore
+chaincoin-cli -datadir=/root/.chaincoincore getwalletinfo
+chaincoin-cli -datadir=/root/.chaincoincore getaccountaddress 0
+chaincoin-cli -datadir=/root/.chaincoincore stop
 
-/usr/local/bin/chc2/chaincoind2 -datadir=/root/.chaincoincore2
-/usr/local/bin/chc2/chaincoin-cli2 -datadir=/root/.chaincoincore2 getwalletinfo
-/usr/local/bin/chc2/chaincoin-cli2 -datadir=/root/.chaincoincore2 getaccountaddress 0
-/usr/local/bin/chc2/chaincoin-cli2 -datadir=/root/.chaincoincore2 stop
+chaincoind -datadir=/root/.chaincoincore2
+chaincoin-cli -datadir=/root/.chaincoincore2 getwalletinfo
+chaincoin-cli -datadir=/root/.chaincoincore2 getaccountaddress 0
+chaincoin-cli -datadir=/root/.chaincoincore2 stop
  
 chaincoind -conf=/root/.chaincoincore3/chaincoin.conf
 chaincoin-cli -datadir=/root/.chaincoincore3 getwalletinfo
