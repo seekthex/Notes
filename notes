@@ -283,6 +283,11 @@ npm run build
 tttttttttttttttttttttttttttttttttttttttttttttttttttttt
 multi nodes notes
 
+
+cp -r -p .chaincoincore .chaincoincore2
+cp -r -p .chaincoincore .chaincoincore3
+
+
 chaincoin-cli getaccountaddress 0
 
 
