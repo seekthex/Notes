@@ -264,9 +264,39 @@ npm install
 npm run build
 
 
+
+
+
+
+
+
+
+
+
 	*** edit the js/index.js file
 	nano js/index.js
 
 ######bash scripts/build.sh
 
 
+
+tttttttttttttttttttttttttttttttttttttttttttttttttttttt
+multi nodes notes
+
+chaincoin-cli getaccountaddress 0
+
+
+/usr/local/bin/chc1/chaincoind -conf=/root/.chaincoincore
+/usr/local/bin/chc1/chaincoin-cli -datadir=/root/.chaincoincore getwalletinfo
+/usr/local/bin/chc1/chaincoin-cli -datadir=/root/.chaincoincore getaccountaddress 0
+/usr/local/bin/chc1/chaincoin-cli -datadir=/root/.chaincoincore stop
+
+/usr/local/bin/chc2/chaincoind2 -datadir=/root/.chaincoincore2
+/usr/local/bin/chc2/chaincoin-cli2 -datadir=/root/.chaincoincore2 getwalletinfo
+/usr/local/bin/chc2/chaincoin-cli2 -datadir=/root/.chaincoincore2 getaccountaddress 0
+/usr/local/bin/chc2/chaincoin-cli2 -datadir=/root/.chaincoincore2 stop
+ 
+chaincoind -conf=/root/.chaincoincore3/chaincoin.conf
+chaincoin-cli -datadir=/root/.chaincoincore3 getwalletinfo
+chaincoin-cli -datadir=/root/.chaincoincore3 getaccountaddress 0
+chaincoin-cli -datadir=/root/.chaincoincore3 stop
