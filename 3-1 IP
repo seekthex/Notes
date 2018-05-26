@@ -73,52 +73,31 @@ addnode=207.246.88.75
 addnode=140.82.42.182
 --------------------------------
 
+-----------------------------------------
+Basic commands
+-----------------------------------------
+
 cd ..
 
-
-
+chaincoind
+chaincoin-cil getwalletinfo
 chaincoin-cli getaccountaddress 0
-
-
-chaincoind -conf=/root/.chaincoincore
-chaincoin-cli -datadir=/root/.chaincoincore getwalletinfo
-chaincoin-cli -datadir=/root/.chaincoincore getaccountaddress 0
-chaincoin-cli -datadir=/root/.chaincoincore stop
+chaincoin-cil stop
 
 chaincoind -datadir=/root/.chaincoincore2
 chaincoin-cli -datadir=/root/.chaincoincore2 getwalletinfo
 chaincoin-cli -datadir=/root/.chaincoincore2 getaccountaddress 0
 chaincoin-cli -datadir=/root/.chaincoincore2 stop
  
-chaincoind -conf=/root/.chaincoincore3/chaincoin.conf
+chaincoind -datadir=/root/.chaincoincore3
 chaincoin-cli -datadir=/root/.chaincoincore3 getwalletinfo
 chaincoin-cli -datadir=/root/.chaincoincore3 getaccountaddress 0
 chaincoin-cli -datadir=/root/.chaincoincore3 stop
 
-
-
-
-chaincoin-cli getaccountaddress 0
-
-
-/usr/local/bin/chc1/chaincoind -conf=/root/.chaincoincore
-/usr/local/bin/chc1/chaincoin-cli -datadir=/root/.chaincoincore getwalletinfo
-/usr/local/bin/chc1/chaincoin-cli -datadir=/root/.chaincoincore getaccountaddress 0
-/usr/local/bin/chc1/chaincoin-cli -datadir=/root/.chaincoincore stop
-
-/usr/local/bin/chc2/chaincoind2 -datadir=/root/.chaincoincore2
-/usr/local/bin/chc2/chaincoin-cli2 -datadir=/root/.chaincoincore2 getwalletinfo
-/usr/local/bin/chc2/chaincoin-cli2 -datadir=/root/.chaincoincore2 getaccountaddress 0
-/usr/local/bin/chc2/chaincoin-cli2 -datadir=/root/.chaincoincore2 stop
- 
-chaincoind -conf=/root/.chaincoincore3/chaincoin.conf
-chaincoin-cli -datadir=/root/.chaincoincore3 getwalletinfo
-chaincoin-cli -datadir=/root/.chaincoincore3 getaccountaddress 0
-chaincoin-cli -datadir=/root/.chaincoincore3 stop
-
-
-
+-------------------------------------
+stuff for masterndodes
+-------------------------------------
 
 #masternodeprivkey=
 #masternode=1
-#masternodeaddr=[IP]:21994
+
