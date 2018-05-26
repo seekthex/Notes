@@ -1,0 +1,5 @@
+cpu-miner-multi notes
+
+
+/cpuminer -a c11 -o stratum+tcp://testpool.hashunlimited.com:3333 -u JB.JB -p chc
+
