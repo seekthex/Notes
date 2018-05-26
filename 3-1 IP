@@ -1,9 +1,80 @@
 tttttttttttttttttttttttttttttttttttttttttttttttttttttt
 multi nodes notes
 
+setup the firewall
 
-cp -r -p .chaincoincore .chaincoincore2
-cp -r -p .chaincoincore .chaincoincore3
+cd .chaincoincore
+
+nano chaincoin.conf
+---------------------------------
+edit chaincoin.conf
+--------------------------------
+daemon=1
+listen=1
+server=1
+testnet=1
+prematurewitness=1
+port=21994
+rpcport=21995
+rpcallowip=127.0.0.1
+rpcuser=chcuser
+rpcpassword=chcpassword
+addnode=207.246.88.75
+addnode=140.82.42.182
+--------------------------------
+
+cd ..
+
+mkdir .chaincoincore2
+
+cd .chaincoincore2
+
+nano chaincoin.conf
+
+---------------------------------
+edit chaincoin.conf
+--------------------------------
+daemon=1
+listen=1
+server=1
+testnet=1
+prematurewitness=1
+port=21996
+rpcport=21997
+rpcallowip=127.0.0.1
+rpcuser=chcuser
+rpcpassword=chcpassword
+addnode=207.246.88.75
+addnode=140.82.42.182
+--------------------------------
+
+cd ..
+
+mkdir .chaincoincore3
+
+cd .chaincoincore3
+
+nano chaincoin.conf
+
+---------------------------------
+edit chaincoin.conf
+--------------------------------
+daemon=1
+listen=1
+server=1
+testnet=1
+prematurewitness=1
+port=21998
+rpcport=21999
+rpcallowip=127.0.0.1
+rpcuser=chcuser
+rpcpassword=chcpassword
+addnode=207.246.88.75
+addnode=140.82.42.182
+--------------------------------
+
+cd ..
+
 
 
 chaincoin-cli getaccountaddress 0
@@ -46,15 +117,7 @@ chaincoin-cli -datadir=/root/.chaincoincore3 getaccountaddress 0
 chaincoin-cli -datadir=/root/.chaincoincore3 stop
 
 
-daemon=1
-listen=1
-server=1
-testnet=1
-prematurewitness=1
-rpcuser=chcuser
-rpcpassword=chcpassword
-rpcport=21995
-rpcallowip=127.0.0.1
+
 
 #masternodeprivkey=
 #masternode=1
