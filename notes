@@ -280,28 +280,5 @@ npm run build
 
 
 
-tttttttttttttttttttttttttttttttttttttttttttttttttttttt
-multi nodes notes
 
 
-cp -r -p .chaincoincore .chaincoincore2
-cp -r -p .chaincoincore .chaincoincore3
-
-
-chaincoin-cli getaccountaddress 0
-
-
-chaincoind -conf=/root/.chaincoincore
-chaincoin-cli -datadir=/root/.chaincoincore getwalletinfo
-chaincoin-cli -datadir=/root/.chaincoincore getaccountaddress 0
-chaincoin-cli -datadir=/root/.chaincoincore stop
-
-chaincoind -datadir=/root/.chaincoincore2
-chaincoin-cli -datadir=/root/.chaincoincore2 getwalletinfo
-chaincoin-cli -datadir=/root/.chaincoincore2 getaccountaddress 0
-chaincoin-cli -datadir=/root/.chaincoincore2 stop
- 
-chaincoind -conf=/root/.chaincoincore3/chaincoin.conf
-chaincoin-cli -datadir=/root/.chaincoincore3 getwalletinfo
-chaincoin-cli -datadir=/root/.chaincoincore3 getaccountaddress 0
-chaincoin-cli -datadir=/root/.chaincoincore3 stop
