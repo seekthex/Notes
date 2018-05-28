@@ -94,6 +94,8 @@ chaincoin-cli -datadir=/root/.chaincoincore3 getwalletinfo
 chaincoin-cli -datadir=/root/.chaincoincore3 getaccountaddress 0
 chaincoin-cli -datadir=/root/.chaincoincore3 stop
 
+SENTINEL_DEBUG=1 ./venv/bin/python bin/sentinel.py
+
 -------------------------------------
 stuff for masterndodes
 -------------------------------------
