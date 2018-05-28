@@ -101,3 +101,17 @@ stuff for masterndodes
 #masternodeprivkey=
 #masternode=1
 
+
+if problem is
+root@dell01:~/.chaincoincore2# chaincoin-cli -datadir=/root/.chaincoincore2 masternode status
+{
+  "outpoint": "0000000000000000000000000000000000000000000000000000000000000000-4294967295",
+  "service": "[2601:285:0:5f90:7da7:de9:885c:29d4]:21996",
+  "status": "Not capable masternode: Broadcasted IP doesn't match our external address. Make sure you issued a new broadcast if IP of this masternode changed recently."
+}
+root@dell01:~/.chaincoincore2#
+
+solution is to add externalip:[ip]:[port] to the the chaincoin.conf
+
+
+
